@@ -1,25 +1,22 @@
-package pagamento;
+package questao1;
 
-public abstract class CartaoCredito {
-
+public class CartaoCredito extends Pagamento{
     private String numCartao;
     private String bandeiraCartao;
     private String titularCartao;
 
-    public CartaoCredito(  String numCartao,  String bandeiraCartao , String titularCartao) {
-
+    public CartaoCredito(String dataHoraPagamento, int numeroPagamento, double valorPago, String numCartao, String bandeiraCartao, String titularCartao) {
+        super(dataHoraPagamento, numeroPagamento, valorPago);
         this.numCartao = numCartao;
         this.bandeiraCartao = bandeiraCartao;
         this.titularCartao = titularCartao;
-
     }
 
     public String getNumCartao() {
-
         return numCartao;
     }
 
-    public void setNumCartao (String numCartao) {
+    public void setNumCartao(String numCartao) {
         this.numCartao = numCartao;
     }
 
@@ -39,5 +36,14 @@ public abstract class CartaoCredito {
         this.titularCartao = titularCartao;
     }
 
+    @Override
+    public String imprimirCupomFiscal() {
+        return "Data e Hora: " + getDataHoraPagamento() +
+               "\n Número Pagamento: " + getNumeroPagamento() +
+               "\n Valor Pago: " + getValorPago() +
+               "\n Número Cartão: " + getNumCartao() +
+               "\n Bandeira Cartão: " + getBandeiraCartao() +
+               "\n Titular Cartão: " + getTitularCartao();
 
+    }
 }
