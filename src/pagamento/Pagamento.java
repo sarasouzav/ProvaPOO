@@ -5,22 +5,13 @@ public abstract class Pagamento {
     private int numeroPagamento;
     private double valorPago;
 
-
     public Pagamento(String dataHoraPagamento, int numeroPagamento, double valorPago) {
-
         this.dataHoraPagamento = dataHoraPagamento;
         this.numeroPagamento = numeroPagamento;
         this.valorPago = valorPago;
-
     }
-
-    public Pagamento(boolean comprovanteTransacaoPix) {
-
-    }
-
 
     public String getDataHoraPagamento() {
-
         return dataHoraPagamento;
     }
 
@@ -28,7 +19,7 @@ public abstract class Pagamento {
         this.dataHoraPagamento = dataHoraPagamento;
     }
 
-    public int getnumeroPagamento() {
+    public int getNumeroPagamento() {
         return numeroPagamento;
     }
 
@@ -44,13 +35,10 @@ public abstract class Pagamento {
         this.valorPago = valorPago;
     }
 
-
-    public String ImprimirCupomFiscal () {
-
+    public String imprimirCupomFiscal(){
+        return " Data e Hora: " + getDataHoraPagamento() +
+               "\n Número Pagamento: " + getNumeroPagamento() +
+               "\n Valor Pago: " + getValorPago();
     }
 }
-
-
-
-
 
